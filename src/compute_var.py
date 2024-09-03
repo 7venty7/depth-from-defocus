@@ -16,9 +16,9 @@ def compute_var(if1, if2):
             count = 0
 
             for i in range(-1, 2):
-                if x + i > 0 and x + i <= M:
+                if x + i >= 0 and x + i < M:
                     for j in range(-1, 2):
-                        if y + j > 0 and y + j <= N:
+                        if y + j >= 0 and y + j < N:
                             count += 1
                             var_r[x][y] = -(M**2 * N**2) / (math.pi**2 * (N**2 * (x+i)**2 + M**2 * (y+j)**2))
                             var_r[x][y] *= np.log(if1[x][y] / if2[x][y])
